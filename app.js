@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost:27017/FYPDB',
   useCreateIndex: true,
   useFindAndModify: false
 });
+ 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -26,7 +27,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/user', routes);
+app.use('/', routes);
+
 
 app.use((req, res, next) => {
   var error = new Error('The page u request is not found');

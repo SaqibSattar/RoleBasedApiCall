@@ -10,7 +10,11 @@ var UserSchema = mongoose.Schema({
   password: {type: String,
      required: true
      // match: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
-      }
+      },
+      role: {
+         type: String,
+         default: 'user'
+     }
 });
 
 module.exports = mongoose.model('User', UserSchema);
